@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+            http://www.springframework.org/schema/mvc
+            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <bean name="propertiesService" class="egovframework.rte.fdl.property.impl.EgovPropertyServiceImpl"
+          destroy-method="destroy">
+        <property name="properties">
+            <map>
+                <entry key="pageUnit" value="10"/>
+                <entry key="pageSize" value="10"/>
+                <entry key="tempPassword" value="rivalWar313"/>
+                <entry key="tempPasswordCnsr" value="www313cokr"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="customCacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <property name="configLocation" value="classpath:/customEhcache.xml"/>
+        <property name="shared" value="true"/>
+    </bean>
+
+
+</beans>

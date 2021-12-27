@@ -1,0 +1,14 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd
+	    					http://www.springframework.org/schema/task
+	    					http://www.springframework.org/schema/task/spring-task-3.1.xsd">
+
+	<!-- 해당 태그들은 크론탭을 설정에 필요한 태그들 -->
+	<task:scheduler id="jobScheduler" pool-size="3" />
+    <task:executor id="threadPoolTaskExecutor" pool-size="2" queue-capacity="10" keep-alive="120"/>
+	<task:annotation-driven scheduler="jobScheduler" executor="threadPoolTaskExecutor" />
+
+</beans>
