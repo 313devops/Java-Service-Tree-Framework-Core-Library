@@ -50,10 +50,4 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 
-	<!-- redis http session configuration -->
-	<bean class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration"/>
-	<bean class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-		<property name="port" value="${redis.port}"/>
-		<property name="hostName" value="${redis.host}"/>
-	</bean>
 </beans>
